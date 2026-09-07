@@ -220,7 +220,7 @@ func (s *Source) Run(params defs.StaticSourceRunParams) error {
 			}
 
 			if demuxer != nil {
-				demuxerErr := demuxer.wait()
+				demuxerErr := demuxer.wait(params.Context)
 				c.Close()
 				return demuxerErr
 			}
